@@ -130,6 +130,7 @@ section { padding-block: clamp(56px, 8vw, 104px); }
 .ph-box .tag { font: 500 0.6875rem var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .ph-box .ttl { color: var(--fg); font-weight: 600; font-size: 0.98rem; }
 .ph-box .hint { font-size: 0.8125rem; max-width: 30ch; }
+.headshot { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 6px; border: 1px solid var(--line); }
 .ph figcaption, .fig figcaption { font-size: 0.8125rem; color: var(--muted); }
 
 /* Sections with a rail */
@@ -207,6 +208,8 @@ th { font: 500 0.6875rem var(--mono); letter-spacing: 0.12em; text-transform: up
 /* Contact */
 .contact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .c-row { display: flex; flex-direction: column; gap: 6px; padding: 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); min-width: 0; }
+.c-row .val.live { border-style: solid; border-color: var(--line); color: var(--fg); text-decoration: none; }
+.c-row a.val.live { color: var(--accent); }
 .c-row .val { font: 500 0.95rem var(--mono); color: var(--muted); border: 1px dashed var(--muted); border-radius: 4px; padding: 10px 12px; overflow-wrap: anywhere; }
 
 footer { border-top: 1px solid var(--line); padding-block: 32px; color: var(--muted); font-size: 0.875rem; }
@@ -307,15 +310,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div><dt>Interests</dt><dd>Hardware validation, embedded systems, semiconductors</dd></div>
       </dl>
     </div>
-    <figure class="ph portrait" aria-label="Headshot placeholder">
-      <div class="ph-box">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        <span class="tag">Photo placeholder</span>
-        <span class="ttl">Professional headshot</span>
-        <span class="hint">Replace with a clear, well-lit headshot of Caleb.</span>
-      </div>
-      <figcaption>Caleb Chen, Atlanta, Georgia</figcaption>
-    </figure>
+    <figure class="ph portrait"><img class="headshot" src="images/headshot.jpg" width="640" height="700" alt="Caleb Chen in a dark suit and navy striped tie against a gray studio background" fetchpriority="high"><figcaption>Caleb Chen, Atlanta, Georgia</figcaption></figure>
   </div>
 </section>
 
@@ -329,7 +324,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a class="card" href="#discovery">
         <span class="chip" data-s="planned">Planned</span>
         <h3>LED Display Driver</h3>
-        <p>ECE 1100 Discovery Project. A serial-controlled LED display, planned in four levels from custom content to an ESP32-S3 or Raspberry Pi upgrade.</p>
+        <p>Discovery Project. A serial-controlled LED display, planned in four levels from custom content to an ESP32-S3 or Raspberry Pi upgrade.</p>
         <span class="more">Read the project →</span>
       </a>
       <a class="card" href="#synapse">
@@ -371,11 +366,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="sec-body">
       <div class="feat-head" style="margin-bottom:0">
         <h2>Resume</h2>
-        <!-- PDF PLACEHOLDER: when the resume PDF is hosted, replace this button with <a class="btn" href="YOUR_PDF_URL">Download resume (PDF)</a> -->
-        <div class="pdf-box">
-          <button class="btn" type="button" disabled>Download resume (PDF)</button>
-          <span class="note">Placeholder. Add the hosted PDF link here.</span>
-        </div>
+        <a class="btn" href="Caleb-Chen-Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
       </div>
       <div class="resume-grid">
         <div>
@@ -389,6 +380,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
                 <ul class="bullets">
                   <li>Expected graduation: May 2028</li>
                   <li>Transfer student, 84 credit hours</li>
+                </ul>
+              </div>
+            </div>
+            <div class="entry">
+              <p class="when">Aug 2025 – May 2026</p>
+              <div>
+                <h4>Auburn University</h4>
+                <p class="sub">Bachelor of Science in Electrical Engineering · Auburn, Alabama</p>
+                <ul class="bullets">
+                  <li>GPA 4.0</li>
+                  <li>Coursework: Circuit Analysis, Data Structures and Algorithms</li>
                 </ul>
               </div>
             </div>
@@ -437,7 +439,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
               <p class="when">Fall 2026</p>
               <div>
                 <h4>LED Display Driver <span class="chip" data-s="planned" style="margin-left:8px">Planned</span></h4>
-                <p class="sub">ECE 1100 Discovery Project</p>
+                <p class="sub">Discovery Project</p>
                 <ul class="bullets">
                   <li>Serial-controlled LED display with four planned levels: custom content, animations, interactivity, and an ESP32-S3 or Raspberry Pi upgrade.</li>
                 </ul>
@@ -529,7 +531,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <!-- ---------- PROJECT 1: DISCOVERY PROJECT ---------- -->
       <article id="discovery" class="proj">
         <div class="proj-head">
-          <div class="row"><span class="chip" data-s="planned">Planned</span><span class="mono-label">ECE 1100 Discovery Project</span></div>
+          <div class="row"><span class="chip" data-s="planned">Planned</span><span class="mono-label">Discovery Project</span></div>
           <h3>LED Display Driver</h3>
         </div>
         <p class="status-note"><strong>Project status: planning.</strong> Nothing described here has been built or tested yet. Each feature carries a label: Planned, In progress, or Completed. I will update the labels, photos, and results as the work happens.</p>
@@ -637,22 +639,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
         <div class="part prose">
           <h4><span class="k">E</span>Results and future improvements</h4>
-          <p>The intended outcome is a working display system that shows custom content, runs animations, and responds to input, with a documented path to a more capable controller. At this point no results exist, and every feature is labeled Planned. The status table above will change as work progresses, and I will add photos, serial test notes, and a demonstration when they are real.</p>
+          <p>The intended outcome is a working display system that shows custom content, runs animations, and responds to input, with a documented path to a more capable controller. At this point no results exist, and every feature is labeled Planned. The status table above will change as work progresses, and I will add serial test notes and results when they are real.</p>
           <p>Possible future improvements include more complex animations, interactive inputs such as buttons or sensors, a higher-resolution display, wireless communication, and ESP32-S3 or Raspberry Pi versions of the system.</p>
           <p>This project gives me a place to apply what I am learning in a setting where I own every layer, from the wire to the command. I expect it to sharpen the debugging habits I started building at Synapse Wireless and to show me which parts of hardware design I want to pursue further.</p>
         </div>
 
-        <div class="part">
-          <h4>Project documentation</h4>
-          <!-- REPLACE each .ph figure with <figure class="fig"><img src="..." alt="..."><figcaption>...</figcaption></figure>. At least one must be an original photograph taken by Caleb. -->
-          <div class="ph-grid">
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Complete hardware setup</span><span class="hint">Original photo of the assembled display, board, and power supply.</span></div><figcaption>Complete hardware setup</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Microcontroller and wiring</span><span class="hint">Close-up of the board and its connections.</span></div><figcaption>Microcontroller and wiring</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">LED display operating</span><span class="hint">The display showing custom content or an animation.</span></div><figcaption>LED display operating</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Screenshot placeholder</span><span class="ttl">Serial communication testing</span><span class="hint">Serial monitor or script output from a real test.</span></div><figcaption>Software and serial communication testing</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo or video placeholder</span><span class="ttl">Final project demonstration</span><span class="hint">Add after the project is complete.</span></div><figcaption>Final project demonstration</figcaption></figure>
-          </div>
-        </div>
       </article>
 
       <!-- ---------- PROJECT 2: SYNAPSE WIRELESS ---------- -->
@@ -760,16 +751,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </figure>
         </div>
 
-        <div class="part">
-          <h4>Photo documentation</h4>
-          <!-- Check with Synapse Wireless before publishing photos of products, prototypes, equipment, or facilities. -->
-          <div class="ph-grid four">
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Laboratory equipment</span><span class="hint">Bench instruments used for automated testing.</span></div><figcaption>Laboratory equipment</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Testing fixtures</span><span class="hint">3D-printed or wired fixtures.</span></div><figcaption>Testing and auditing fixtures</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Electrical hardware</span><span class="hint">Gateways, cables, or boards.</span></div><figcaption>Electrical hardware</figcaption></figure>
-            <figure class="ph"><div class="ph-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h3l1.5-2h9L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span class="tag">Photo placeholder</span><span class="ttl">Prototype testing</span><span class="hint">A heat chamber or monitoring setup.</span></div><figcaption>Prototype testing</figcaption></figure>
-          </div>
-        </div>
       </article>
 
       <!-- ---------- PROJECT 3: ADDITIONAL PROJECTS ---------- -->
@@ -800,12 +781,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="sec-body">
       <h2>Let's talk hardware.</h2>
       <p class="prose">I'm looking for internships and projects in electrical engineering, hardware validation, semiconductor technology, and test engineering. I'm based in Atlanta, Georgia.</p>
-      <!-- Replace each placeholder value with the real address or link. -->
-      <div class="contact-list">
-        <div class="c-row"><span class="mono-label">Professional email</span><span class="val">[Add professional email]</span></div>
-        <div class="c-row"><span class="mono-label">LinkedIn</span><span class="val">[Add LinkedIn profile URL]</span></div>
-        <div class="c-row"><span class="mono-label">GitHub</span><span class="val">[Add GitHub profile URL]</span></div>
-        <div class="c-row"><span class="mono-label">Resume</span><span class="val">[Add resume PDF link]</span></div>
+            <div class="contact-list">
+        <div class="c-row"><span class="mono-label">Professional email</span><span class="val live">Calebgongchen@proton.mail</span></div>
+        <div class="c-row"><span class="mono-label">LinkedIn</span><a class="val live" href="https://www.linkedin.com/in/caleb-chen-4a15ba322" target="_blank" rel="noopener">linkedin.com/in/caleb-chen-4a15ba322</a></div>
+        <div class="c-row"><span class="mono-label">Resume</span><a class="val live" href="Caleb-Chen-Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a></div>
       </div>
     </div>
   </div>
@@ -815,7 +794,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <footer>
   <div class="wrap">
     <span>© 2026 Caleb Chen · Georgia Institute of Technology</span>
-    <span>ECE 1100 ePortfolio · <a href="#home">Back to top</a></span>
+    <span>Caleb Chen ePortfolio · <a href="#home">Back to top</a></span>
   </div>
 </footer>
 
